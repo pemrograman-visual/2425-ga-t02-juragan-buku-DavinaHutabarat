@@ -3,51 +3,41 @@
 import java.util.*;
 import java.lang.Math;
 
-public class JavaApplication {
+public class T02 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String isbn, judul, penulis, grade;
-        int tahunterbit;
-        String penerbit;
-        String formatbukuelektronik;
-        double hargapembelian, minimummargin;
-        int stok;
-        double rating;
+        String iSBN, judul, penulis, penerbit, formatBukuElektronik, kategori;
+        int tahunTerbit, stok;
+        double hargaPembelian, minimumMargin, rating;
 
-        isbn = input.nextLine();
+        iSBN = input.nextLine();
         judul = input.nextLine();
         penulis = input.nextLine();
-        tahunterbit = Integer.parseInt(input.nextLine());
+        tahunTerbit = Integer.parseInt(input.nextLine());
         penerbit = input.nextLine();
-        formatbukuelektronik = input.nextLine();
-        hargapembelian = Double.parseDouble(input.nextLine());
-        minimummargin = Double.parseDouble(input.nextLine());
+        formatBukuElektronik = input.nextLine();
+        hargaPembelian = Double.parseDouble(input.nextLine());
+        minimumMargin = Double.parseDouble(input.nextLine());
         stok = Integer.parseInt(input.nextLine());
         rating = Double.parseDouble(input.nextLine());
         if (rating >= 4.7) {
-            grade = "Best Pick";
+            kategori = "Best Pick";
         } else {
-            if (rating >= 4.5 && rating < 4.7) {
-                grade = "Must Read";
+            if (rating >= 4.5) {
+                kategori = "Must Read";
             } else {
-                if (rating >= 4.0 && rating < 4.5) {
-                    grade = "Recommended";
+                if (rating >= 4.0) {
+                    kategori = "Recommended";
                 } else {
                     if (rating >= 3.0) {
-                        grade = "Average";
+                        kategori = "Average";
                     } else {
-                        if (rating < 3.0) {
-                            grade = "Low";
-                        }
+                        kategori = "Low";
                     }
                 }
             }
         }
-        System.out.println(isbn + "|" + judul + "|" + penulis + "|" + tahunterbit + "|" + penerbit + "|" + formatbukuelektronik + "|" + hargapembelian + "|" + minimummargin + "|" + stok + "|" + grade + "|" + toFixed(rating,1));
-    }
-    
-    private static String toFixed(double value, int digits) {
-        return String.format("%." + digits + "f", value);
+        System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBukuElektronik + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + rating + "|" + kategori);
     }
 }
