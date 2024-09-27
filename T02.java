@@ -11,7 +11,10 @@ public class T02 {
         String isbn, judul, penulis;
         int tahunterbit;
         String penerbit;
-        String formatbukuelektronik, rate;
+        String formatbukuelektronik;
+        double hargapembelian, minimummargin;
+        int stok;
+        String rate;
         double rating;
 
         isbn = input.nextLine();
@@ -20,6 +23,9 @@ public class T02 {
         tahunterbit = input.nextInt();
         penerbit = input.nextLine();
         formatbukuelektronik = input.nextLine();
+        hargapembelian = input.nextDouble();
+        minimummargin = input.nextDouble();
+        stok = input.nextInt();
         rating = input.nextDouble();
         if (rating >= 4.7) {
             rate = "Best Pick";
@@ -43,4 +49,3 @@ public class T02 {
         System.out.println(isbn + "|" + judul + "|" + penulis + "|" + tahunterbit + "|" + penerbit + "|" + formatbukuelektronik + "|" + rate);
     }
 }
-
