@@ -27,7 +27,7 @@ public class T02 {
         minimummargin = input.nextDouble();
         stok = input.nextInt();
         rating = input.nextDouble();
-        if (rating >= 4.7) {
+        if (rating >= 4.7 && rating < 5.0) {
             rate = "Best Pick";
         } else {
             if (rating >= 4.5 && rating < 4.7) {
